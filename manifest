@@ -1,0 +1,27 @@
+#appname:Spaz
+#appid:com.funkatron.app.spaz
+#publisher:Funkatron Productions
+#image:skull_avatar.png
+#url:http://getspaz.com
+#guid:c14dcf34-35bc-408e-a2cc-bea238c441ce
+#desc:Spaz port to Titanium
+#type:desktop
+runtime:0.4.0
+api:0.4.0
+tiapp:0.4.0
+tifilesystem:0.4.0
+tiplatform:0.4.0
+tiui:0.4.0
+javascript:0.4.0
+tianalytics:0.4.0
+sdk:0.4.0
+mobilesdk:0.4.0
+python:0.4.0
+tidatabase:0.4.0
+tidesktop:0.4.0
+tigrowl:0.4.0
+timedia:0.4.0
+timonkey:0.4.0
+tinetwork:0.4.0
+tinotification:0.4.0
+tiprocess:0.4.0
