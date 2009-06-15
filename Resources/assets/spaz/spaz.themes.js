@@ -38,10 +38,10 @@ Spaz.Themes.init = function() {
 
 
 Spaz.Themes.browseForUserCss = function() {
-	var cssFilter = new air.FileFilter("StyleSheets", "*.css;");
-	var userFile = new air.File();
-	userFile.browseForOpen("Choose a CSS file", [cssFilter]);
-	userFile.addEventListener(air.Event.SELECT, Spaz.Themes.userCSSSelected);
+	// var cssFilter = new air.FileFilter("StyleSheets", "*.css;");
+	// var userFile = new air.File();
+	// userFile.browseForOpen("Choose a CSS file", [cssFilter]);
+	// userFile.addEventListener(air.Event.SELECT, Spaz.Themes.userCSSSelected);
 }
 
 
@@ -77,7 +77,7 @@ Spaz.Themes.loadUserCSS = function() {
 
 
 Spaz.Themes.getUserCSSFile = function() {
-	return Titanium.Filesystem.getApplicationDataDirectory().resolvePath('user.css')
+	return Titanium.Filesystem.getApplicationDataDirectory().resolve('user.css')
 };
 
 
@@ -124,23 +124,26 @@ Spaz.Themes.setCurrentTheme = function() {
 
 
 Spaz.Themes.getThemePaths = function() {
-	var appdir    = air.File.applicationDirectory;
-	var themesdir = appdir.resolvePath('themes');
+	var appdir    = Titanium.Filesystem.getFile(Titanium.App.path);
+	var themesdir = appdir.resolve('themes');
 	var appStore  = Titanium.Filesystem.getApplicationDataDirectory();
-	var userthemesdir = appStore.resolvePath('userthemes');
+	var userthemesdir = appStore.resolve('userthemes');
 	
 	// we load from both the built-in themes dir and the userthemes dir
-	var list = themesdir.getDirectoryListing().concat(userthemesdir.getDirectoryListing())
+	var themesdir_list = themesdir.getDirectoryListing() || [];
+	var userthemesdir_list = userthemesdir.getDirectoryListing() || [];
+	
+	var list = themesdir_list.concat(userthemesdir_list);
 	
 	var themes = new Array();
 	for (i = 0; i < list.length; i++) {
-		if (list[i].isDirectory) {
+		if (list[i] && list[i].isDirectory()) {
 			
 			var thisthemedir = list[i];
 			var thisthemename= thisthemedir.name;
-			var thisthemecss = thisthemedir.resolvePath('theme.css');
-			var thisthemejs  = thisthemedir.resolvePath('theme.js');
-			var thisthemeinfo= thisthemedir.resolvePath('info.js');
+			var thisthemecss = thisthemedir.resolve('theme.css');
+			var thisthemejs  = thisthemedir.resolve('theme.js');
+			var thisthemeinfo= thisthemedir.resolve('info.js');
 			
 			
 			var thistheme = {

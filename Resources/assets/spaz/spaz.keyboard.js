@@ -8,17 +8,16 @@ if (!Spaz.Keyboard) Spaz.Keyboard = {};
 
 Spaz.Keyboard.setShortcuts = function() {
 	Spaz.dump("Setting Shortcuts=================================================")
-    Spaz.dump("os: " + air.Capabilities['os']);
 	
 	var Modkey = 'Meta';
 	
-	if (air.Capabilities['os'].search(/Windows/i) != -1) {
+	if (Spaz.Sys.isWindows()) {
 		Spaz.dump('THIS IS WINDOWS');
 		Modkey = 'Ctrl';
-	} else if (air.Capabilities['os'].search(/Linux/i) != -1) { // thx agolna
+	} else if (Spaz.Sys.isLinux()) { // thx agolna
 		Spaz.dump('THIS IS LINUX');
 		Modkey = 'Ctrl';
-	} else if (air.Capabilities['os'].search(/Mac/i) != -1) {
+	} else if (Spaz.Sys.isMac()) {
 		Spaz.dump('THIS IS MACOS');
 		Modkey = 'Meta';
 	}

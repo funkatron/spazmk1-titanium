@@ -112,17 +112,17 @@ Spaz.initialize = function() {
 	console.info("docking initialization");
 	Spaz.Dock.init();
 
-	air.NativeApplication.nativeApplication.autoExit = true;
+	// air.NativeApplication.nativeApplication.autoExit = true;
 
-	window.htmlLoader.manageCookies = false;
-	window.htmlLoader.paintsDefaultBackground = false;
-	window.htmlLoader.cacheResponse = true;
-	window.htmlLoader.useCache = true;
+	// window.htmlLoader.manageCookies = false;
+	// window.htmlLoader.paintsDefaultBackground = false;
+	// window.htmlLoader.cacheResponse = true;
+	// window.htmlLoader.useCache = true;
 	Spaz.Sys.initUserAgentString();
 
-	air.URLRequestDefaults.manageCookies = false;
-	air.URLRequestDefaults.cacheResponse = true;
-	air.URLRequestDefaults.useCache = true;
+	// air.URLRequestDefaults.manageCookies = false;
+	// air.URLRequestDefaults.cacheResponse = true;
+	// air.URLRequestDefaults.useCache = true;
 
 	// apply dropshadow to window
 	// if (Spaz.Prefs.get('window-dropshadow') && !Spaz.Sys.isLinux()) {
@@ -231,13 +231,12 @@ Spaz.initialize = function() {
 	/*
 		set-up window and app events
 	*/
-	window.nativeWindow.addEventListener(air.Event.EXITING, Spaz.Windows.onWindowClose);
-	// air.NativeApplication.nativeApplication.addEventListener(air.Event.EXITING, Spaz.Windows.onAppExit);
-	window.nativeWindow.addEventListener(air.Event.CLOSING, Spaz.Windows.onWindowClose);
-	window.nativeWindow.addEventListener(air.Event.ACTIVATE, Spaz.Windows.onWindowActive);
-	window.nativeWindow.addEventListener(air.NativeWindowBoundsEvent.RESIZE, Spaz.Windows.onWindowResize);
-	window.nativeWindow.addEventListener(air.NativeWindowBoundsEvent.MOVE, Spaz.Windows.onWindowMove);
-	window.nativeWindow.addEventListener(air.Event.DEACTIVATE, Spaz.Windows.onWindowDeactivate);
+	// window.nativeWindow.addEventListener(air.Event.EXITING, Spaz.Windows.onWindowClose);
+	// window.nativeWindow.addEventListener(air.Event.CLOSING, Spaz.Windows.onWindowClose);
+	// window.nativeWindow.addEventListener(air.Event.ACTIVATE, Spaz.Windows.onWindowActive);
+	// window.nativeWindow.addEventListener(air.NativeWindowBoundsEvent.RESIZE, Spaz.Windows.onWindowResize);
+	// window.nativeWindow.addEventListener(air.NativeWindowBoundsEvent.MOVE, Spaz.Windows.onWindowMove);
+	// window.nativeWindow.addEventListener(air.Event.DEACTIVATE, Spaz.Windows.onWindowDeactivate);
 
 	/*
 		Initialize native menus

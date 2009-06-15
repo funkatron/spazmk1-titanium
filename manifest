@@ -14,9 +14,6 @@ tiplatform:0.4.0
 tiui:0.4.0
 javascript:0.4.0
 tianalytics:0.4.0
-sdk:0.4.0
-mobilesdk:0.4.0
-python:0.4.0
 tidatabase:0.4.0
 tidesktop:0.4.0
 tigrowl:0.4.0
